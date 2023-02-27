@@ -1,0 +1,32 @@
+.info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.info p {
+  color: var(--blue);
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
+.info span {
+  background: var(--gray-400);
+  color: var(--gray-200);
+  font-size: 0.75rem;
+  font-weight: bold;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: auto;
+  height: 19px;
+  border-radius: 999px;
+
+  padding: 2px 8px;
+} 
+
+.done p {
+  color: var(--purple);
+}
