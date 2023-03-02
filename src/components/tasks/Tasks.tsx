@@ -1,3 +1,4 @@
+import { Empty } from '../empty/Empty';
 import { Info } from '../info/Info';
 import styles from './Tasks.module.css';
 
@@ -12,7 +13,7 @@ export function Tasks() {
         <Info text='Concluídas' counter={counter} done={done}/>
       </div>
 
-      <p>empty</p>
+      <Empty />
     </div>
   )
 }

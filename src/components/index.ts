@@ -5,3 +5,4 @@ export * from './input/Input';
 export * from './button/Button';
 export * from './tasks/Tasks';
 export * from './info/Info';
+export * from './empty/Empty';
