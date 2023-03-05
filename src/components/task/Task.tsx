@@ -1,17 +1,19 @@
 import {Trash} from 'phosphor-react';
-import { InputHTMLAttributes } from 'react';
 import styles from './Task.module.css';
 
-interface TaskProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface TaskProps {
+  id: number;
   content: string;
   hasDone: boolean;
 }
 
-export function Task({id, content, hasDone = false }: TaskProps){
+export function Task({ id, content, hasDone = false }: TaskProps){
+  const idAsStrng = String(id);
+  
   return (
     <div className={`${styles.task} ${hasDone ? styles.hasDone : ''}`}>
-      <input id={id} type="checkbox"  />
-      <label htmlFor={id}/>
+      <input id={idAsStrng} type="checkbox"  />
+      <label htmlFor={idAsStrng}/>
 
       <p>{content}</p>
       
