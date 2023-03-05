@@ -1,8 +1,32 @@
 .newTask {
+  position: relative;
   width: 100%;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 0.5rem;
+}
+
+@media(max-width: 375px) {
+  .newTask {
+    flex-direction: column;
+  }
+
+  .newTask > button {
+    width: 100%;
+  }
+}
+
+.error {
+  position: absolute;
+  top: -25px;
+  left: 5px;
+  
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+
+  font-size: .875rem;
+  color: var(--danger);
 }
