@@ -1,4 +1,7 @@
 .task {
+  width: 100%;
+  min-height: 75px;
+  
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -67,7 +70,9 @@ input[type="checkbox"]:checked + label::after {
 }
 
 .task p {
+  width: 100%;
   font-size: 0.875rem;
+  text-align: left;
 }
 
 .task button {
@@ -100,6 +105,6 @@ input[type="checkbox"]:checked + label::after {
   display: inline-block;
 }
 
-.done > p { 
+.isDone > p { 
   text-decoration: line-through;
 }
