@@ -59,9 +59,12 @@ input[type="checkbox"]:checked + label::after {
   content: "";
   position: absolute;
   top: 8px;
+  left: 1px;
+  right: 0;
 
   width: 3px;
   height: 6px;
+  margin: 0 auto;
 
   border-right: solid 1px var(--gray-100);
   border-bottom: solid 1px var(--gray-100);
@@ -105,6 +108,7 @@ input[type="checkbox"]:checked + label::after {
   display: inline-block;
 }
 
-.isDone > p { 
+.hasDone > p { 
   text-decoration: line-through;
+  color: var(--gray-300);
 }

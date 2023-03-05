@@ -7,10 +7,11 @@ import styles from './TaskContainer.module.css';
 
 interface TaskContainerProps {
   tasks: TaskProps[];
+  handleDoneTask: (id: number) => void;
   handleDeleteTask: (id: number) => void;
 }
 
-export function TaskContainer({tasks, handleDeleteTask}: TaskContainerProps) {
+export function TaskContainer({tasks, handleDoneTask, handleDeleteTask}: TaskContainerProps) {
 
   const counter = tasks.length;
   const counterDone = tasks.reduce(( acc, cur ) =>  cur.hasDone ? ++acc : acc, 0);
@@ -30,6 +31,7 @@ export function TaskContainer({tasks, handleDeleteTask}: TaskContainerProps) {
               id={id} 
               content={content}
               hasDone={hasDone}
+              handleDoneTask={handleDoneTask}
               handleDeleteTask={handleDeleteTask}
             />
           ))}
