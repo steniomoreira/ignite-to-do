@@ -1,25 +1,4 @@
-.tasks {
-  width: 100%;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.info {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.list {
-
-}
-
-.taskContent {
+.task {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -32,11 +11,11 @@
   border-radius: 0.5rem;
 }
 
-.taskContent input[type="checkbox"]  {  
+.task input[type="checkbox"]  {  
   display: none;
 }
 
-.taskContent input[type="checkbox"] + label {
+.task input[type="checkbox"] + label {
   position: relative;
 
   width: 24px;
@@ -47,29 +26,28 @@
   align-items: center;
 }
 
-.taskContent input[type="checkbox"] + label::before {
+.task input[type="checkbox"] + label::before {
   content: '';
   width: 15px;
   height: 15px;
   border-radius: 50%;
 
   border: 1px solid var(--blue);
-  display: inline-block;
 
   transition: 0.2s;
   cursor: pointer;
 }
 
-.taskContent input[type="checkbox"]:not(:checked) + label:hover::before {
+.task input[type="checkbox"]:not(:checked) + label:hover::before {
   background: var(--blue-dark);
 }
 
-.taskContent input[type="checkbox"]:checked + label::before {
+.task input[type="checkbox"]:checked + label::before {
   background: var(--purple-dark);
   border: 1px solid var(--purple-dark);
 }
 
-.taskContent input[type="checkbox"]:checked + label:hover::before {
+.task input[type="checkbox"]:checked + label:hover::before {
   background: var(--purple);
   border: 1px solid var(--purple);
 }
@@ -77,8 +55,7 @@
 input[type="checkbox"]:checked + label::after {
   content: "";
   position: absolute;
-  left: 9px;
-  bottom: 8px;
+  top: 8px;
 
   width: 3px;
   height: 6px;
@@ -89,11 +66,11 @@ input[type="checkbox"]:checked + label::after {
   transform: rotate(45deg);
 }
 
-.taskContent p {
+.task p {
   font-size: 0.875rem;
 }
 
-.taskContent button {
+.task button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -110,15 +87,19 @@ input[type="checkbox"]:checked + label::after {
   box-shadow: none;
 }
 
-.taskContent button:hover {
+.task button:hover {
   background: var(--gray-400);
   color: var(--danger);
 
   transition: .2s;
 }
 
-.taskContent button svg {
+.task button svg {
   width: 24px;
   height: 18px;
   display: inline-block;
+}
+
+.done > p { 
+  text-decoration: line-through;
 }
