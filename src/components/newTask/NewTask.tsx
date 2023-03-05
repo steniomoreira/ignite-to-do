@@ -8,7 +8,7 @@ import styles from './NewTask.module.css';
 interface NewTaskProps {
   newTask: string;
   handleCreateNewTask: (event: FormEvent) => void;
-  handleOnChangeTask: (event: ChangeEvent<HTMLInputElement>) => void;
+  handleOnChangeTask: (event: ChangeEvent<HTMLInputElement>) => void;  
 }
 
 export function NewTask({newTask, handleCreateNewTask, handleOnChangeTask}: NewTaskProps) {

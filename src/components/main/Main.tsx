@@ -27,10 +27,22 @@ export function Main() {
     setNewTask(event.target.value);    
   }
 
+  function handleDeleteTask(taskId: number) {
+    const updatedTasks = tasks.filter( task => task.id !== taskId);
+    setTasks(updatedTasks);
+  }
+
   return (
     <main className={styles.main}>
-      <NewTask newTask={newTask} handleCreateNewTask={handleCreateNewTask} handleOnChangeTask={handleOnChangeTask} />
-      <TaskContainer tasks={tasks} />
+      <NewTask
+        newTask={newTask}
+        handleCreateNewTask={handleCreateNewTask}
+        handleOnChangeTask={handleOnChangeTask}        
+      />
+      <TaskContainer
+        tasks={tasks}
+        handleDeleteTask={handleDeleteTask}
+      />
     </main>
   )
 }

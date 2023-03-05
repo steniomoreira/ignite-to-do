@@ -5,11 +5,12 @@ export interface TaskProps {
   id: number;
   content: string;
   hasDone: boolean;
+  handleDeleteTask?: (id: number) => void;
 }
 
-export function Task({ id, content, hasDone = false }: TaskProps){
+export function Task({ id, content, hasDone = false, handleDeleteTask }: TaskProps){
   const idAsStrng = String(id);
-  
+
   return (
     <div className={`${styles.task} ${hasDone ? styles.hasDone : ''}`}>
       <input id={idAsStrng} type="checkbox"  />
@@ -17,7 +18,7 @@ export function Task({ id, content, hasDone = false }: TaskProps){
 
       <p>{content}</p>
       
-      <button type='button'>
+      <button type='button' onClick={() => handleDeleteTask?.(id)}>
         <Trash size={24} />
       </button>
     </div>

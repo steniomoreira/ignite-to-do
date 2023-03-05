@@ -7,9 +7,10 @@ import styles from './TaskContainer.module.css';
 
 interface TaskContainerProps {
   tasks: TaskProps[];
+  handleDeleteTask: (id: number) => void;
 }
 
-export function TaskContainer({tasks}: TaskContainerProps) {
+export function TaskContainer({tasks, handleDeleteTask}: TaskContainerProps) {
 
   const counter = tasks.length;
   const counterDone = tasks.reduce(( acc, cur ) =>  cur.hasDone ? ++acc : acc, 0);
@@ -28,7 +29,8 @@ export function TaskContainer({tasks}: TaskContainerProps) {
               key={id} 
               id={id} 
               content={content}
-              hasDone={hasDone}                         
+              hasDone={hasDone}
+              handleDeleteTask={handleDeleteTask}
             />
           ))}
         </div>

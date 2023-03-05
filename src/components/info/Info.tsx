@@ -7,15 +7,16 @@ interface InfoProps {
 }
 
 export function Info({text, counter, done}: InfoProps) {
+  const hasInfoDone = done !== undefined;
 
   function isDone() {
     return `${done} de ${counter}`;
   }
-
+  
   return (
-    <div className={`${ styles.info} ${done && styles.done}`}>
+    <div className={`${ styles.info} ${ hasInfoDone && styles.done}`}>
       <p>{text}</p>
-      <span>{`${done && counter > 0 ? isDone() : counter}`}</span>
+      <span>{`${ hasInfoDone && counter > 0 ? isDone() : counter}`}</span>
     </div>
   )
 }
